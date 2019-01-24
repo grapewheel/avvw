@@ -1,5 +1,5 @@
 {
-  "name": "apicloud",
+  "name": "avvw",
   "version": "1.0.0",
   "description": "Avvw apicloud framework",
   "main": "index.js",
@@ -11,7 +11,11 @@
     "build": "webpack --config webpack.prod.js"
   },
   "author": "Marlon <124711483@qq.com>",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/grapewheel/avvw"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "apicloud-cli": "^0.2.0",

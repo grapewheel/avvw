@@ -21,6 +21,7 @@ Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数
 - 其他省略
 
 # 开始使用
+ git clone 或者 直接下载master包，cd进入包目录
  #> npm i   
  #> npm run wifi-start 开wifi服务，wifi-stop 停止服务   
  #> npm run wifi-sync 真机wifi同步  
