@@ -1,12 +1,12 @@
 <template>
-	<containter>
+	<container>
 		<header-c :left="false"/>
 		<tabbar v-model="tabActive" id="tabbar" fixed>
 			<tabbar-item icon="home-o">标签</tabbar-item>
 			<tabbar-item icon="search" dot>标签</tabbar-item>
 			<tabbar-item icon="friends-o" info="5">标签</tabbar-item>
 		</tabbar>
-	</containter>
+	</container>
 </template>
 
 <script>
