@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="A0000000000023" version="0.0.1">
+  	<name>apicloud</name>
+	<description>
+		Example For APICloud + Vue + Vant + Webpack4.
+	</description>
+	<author email="124711483@qq.com" href="https://github.com/grapestudio">
+		Marlon
+	</author>
+	<content src="./dist/index.html" />
+	<preference name="appBackground" value="rgba(0,0,0,0)"/>
+	<preference name="windowBackground" value="rgba(0,0,0,0)"/>
+	<preference name="frameBackgroundColor" value="rgba(255,255,255,255)"/>
+	<preference name="autoLaunch" value="true"/>
+	<preference name="autoUpdate" value="true"/>
+	<preference name="smartUpdate" value="true"/>
+	<preference name="debug" value="false"/>
+	<preference name="statusBarAppearance" value="true"/>
+	<preference name="pageBounce" value="false"/>
+	<permission name="location"/>
+	<permission name="internet"/>
+	<access origin="*"/>
+</widget>

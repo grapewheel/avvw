@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title><%= htmlWebpackPlugin.options.name %></title>
+</head>
+<body>
+<div id="page">
+    <vue><!-- Vue here --></vue>
+</div>
+<script type="text/javascript" src="<%= htmlWebpackPlugin.options.vuejs %>"></script>
+<script type="text/javascript" src="fastclick.min.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+    var page
+
+    // Apicloud initialize
+    apiready = function () {
+      Vue.prototype.$ac = api // Vue global apicloud API
+      page = new Vue({
+        el: '#page',
+        components: {'vue': <%= htmlWebpackPlugin.options.name %>Vue},
+        mounted() {
+          Origami.fastclick(document.body) // You must use fastclick on the mobile
+        }
+      })
+    }
+
+    // Browser initialize
+    setTimeout(() => {
+      if (page === undefined) {
+        page = new Vue({
+          el: '#page',
+          components: {'vue': <%= htmlWebpackPlugin.options.name %>Vue},
+          mounted() {
+            Origami.fastclick(document.body) // You must use fastclick on the mobile
+          }
+        })
+      }
+    }, 500)
+</script>
+
