@@ -21,12 +21,14 @@ Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数
 - 其他省略
 
 # 开始使用
- git clone 或者 直接下载master包，cd进入包目录
+ git clone 或者 直接下载master包，cd进入包目录   
+ ```
  #> npm i   
  #> npm run wifi-start 开wifi服务，wifi-stop 停止服务   
  #> npm run wifi-sync 真机wifi同步  
  #> npm run dev 开启本地测试   
  #> npm run build 编译
+ ```
 
  # 开发细节
 如无需高级配置，那么只需关注src下pages目录文件，而无需更改templates目录文件，这里说明一下pages文件：   
