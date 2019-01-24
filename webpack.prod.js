@@ -15,7 +15,7 @@ for (let file of files) {
         name: page,
         vuejs: 'vue.min.js',
         filename: `${page}.html`,
-        template: './src/templates/page.html'
+        template: './src/templates/page.ejs'
     }))
 }
 
