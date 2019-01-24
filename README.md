@@ -13,7 +13,7 @@ Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数
         - api.js Apicloud前端库源文件，保留
         - fastclick.min.js 移动端减少触点反馈时间
         - index.html Apicloud入口文件
-        - page.html 将pages下vue编译为Apicloud可用的模板
+        - page.ejs 将pages下vue编译为Apicloud可用的模板
         - vue.js 未压缩vue库，用于开发环境
         - vue.min.js 压缩vue库，用于生产环境
 - .syncignore 不同步到Apploader的文件列表
@@ -43,7 +43,7 @@ window.homeVue = {
 // 然后才export
 export default window.homeVue
 ```
-这是与本来vue直接export不同之处，因为在templates中的page.html模板文件中，需要从window中拿回vue export object来在页面上构建vue初始化！而components目录文件则无需如此！
+这是与本来vue直接export不同之处，因为在templates中的page.ejs模板文件中，需要从window中拿回vue export object来在页面上构建vue初始化！而components目录文件则无需如此！
 
 > 由于框架并非采用Vue的SPA，所以无法在多页面间使用vue-router、vuex之类的单页面应用的数据共享技术，而只能采用Apicloud API提供的相关页面跳转传递、数据共享技术
 
