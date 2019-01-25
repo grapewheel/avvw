@@ -57,7 +57,7 @@ api.openFrame({
 ```
 
 ### 本地浏览器预览
-npm run dev 开启测试服，但和一般的vue测试不同的是，你需要手动切换需要测试的页面，eg. [http://localhost:8080/home.html](http://localhost:8080/home.html)，不用测试index.html，因为此文件是Apicloud所用，页面测试时遇到**api is not undefined**不用理会，因为api是Apicloud App环境下才初始化的对象
+npm run dev 开启测试服，但和一般的vue测试不同的是，你需要手动切换需要测试的页面，eg. [http://localhost:8080/home.html](http://localhost:8080/home.html)，不用测试index.html，因为此文件是Apicloud所用，页面测试时遇到**api is not defined**不用理会，因为api是Apicloud App环境下才初始化的对象
 > 浏览器预览是用来调节界面排版布局，体验性测试请使用真机App loader   
 
 ### Apicloud API SDK
