@@ -1,7 +1,7 @@
 <template>
 	<container>
 		<header-c :left="false"/>
-		<tabbar v-model="tabActive" id="tabbar" fixed>
+		<tabbar v-model="tabActive" id="tabbar" @change="changeTab" fixed>
 			<tabbar-item icon="home-o">标签</tabbar-item>
 			<tabbar-item icon="search" dot>标签</tabbar-item>
 			<tabbar-item icon="friends-o" info="5">标签</tabbar-item>
@@ -16,7 +16,8 @@
 	/* You can use other UI framework as u like */
 	import { Tabbar, TabbarItem } from "vant"; // Dynamic import is a good idea to keep ur page slim and fast
 
-	window.homeVue = { // Pay attention here!!
+	window.homeVue = {
+		// Pay attention here!!
 		name: "home",
 		components: { HeaderC: Header, Tabbar, TabbarItem },
 		data() {
@@ -69,13 +70,13 @@
 				}
 			);
 		},
-		watch: {
-			tabActive(index) {
+		methods: {
+			changeTab(index) {
 				// You cann't test this on the browser, use wifi sync to ur phone pleaz
 				console.info("select tab: ", index);
 				this.$ac.setFrameGroupIndex({
 					name: "homeTabs",
-					index: index,
+					index,
 					scroll: true
 				});
 			}
