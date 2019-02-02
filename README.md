@@ -3,7 +3,7 @@ Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数
 
 > 使用AVVW可以极速开发出流畅的商用级别APP，让你轻松应付各种开发需求   
 
-> 已适配Android 6以下低端机型，在此非常感谢[@ftlh2005](https://github.com/ftlh2005)同学的[Issue](https://github.com/grapewheel/avvw/issues/2#issue-404622819)
+> 已适配IOS8、Android 6以下低端机型，在此非常感谢[@ftlh2005](https://github.com/ftlh2005)同学的[Issue](https://github.com/grapewheel/avvw/issues/2#issue-404622819)
 
 # 目录结构
 - dist 编译代码，连同config.xml上传到Apicloud发布App
