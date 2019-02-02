@@ -1,9 +1,9 @@
 <template>
 	<container>
-		<search placeholder="Search here"/>
-		<list v-model="loading" :finished="finished" finished-text="no more..." @load="loadMore">
-			<cell v-for="item in list" :key="item" :title="item"/>
-		</list>
+		<Search placeholder="Search here"/>
+		<List v-model="loading" :finished="finished" finished-text="no more..." @load="loadMore">
+			<Cell v-for="item in list" :key="item" :title="item"/>
+		</List>
 	</container>
 </template>
 

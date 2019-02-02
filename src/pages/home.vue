@@ -1,11 +1,11 @@
 <template>
 	<container>
-		<header-c :left="false"/>
-		<tabbar v-model="tabActive" id="tabbar" @change="changeTab" fixed>
-			<tabbar-item icon="home-o">标签</tabbar-item>
-			<tabbar-item icon="search" dot>标签</tabbar-item>
-			<tabbar-item icon="friends-o" info="5">标签</tabbar-item>
-		</tabbar>
+		<Header :left="false"/>
+		<Tabbar v-model="tabActive" id="tabbar" @change="changeTab" fixed>
+			<TabbarItem icon="home-o">标签</TabbarItem>
+			<TabbarItem icon="search" dot>标签</TabbarItem>
+			<TabbarItem icon="friends-o" info="5">标签</TabbarItem>
+		</Tabbar>
 	</container>
 </template>
 
@@ -19,7 +19,7 @@
 	window.homeVue = {
 		// Pay attention here!!
 		name: "home",
-		components: { HeaderC: Header, Tabbar, TabbarItem },
+		components: { Header, Tabbar, TabbarItem },
 		data() {
 			return {
 				tabActive: 0

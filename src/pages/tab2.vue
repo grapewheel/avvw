@@ -1,11 +1,11 @@
 <template>
 	<container>
-		<cell-group>
-			<cell title="照片读取">
-				<icon name="photograph" slot="right-icon" @click="takePic" style="margin-top: 3px;"/>
-			</cell>
+		<CellGroup>
+			<Cell title="照片读取">
+				<Icon name="photograph" slot="right-icon" @click="takePic" style="margin-top: 3px;"/>
+			</Cell>
 			<img :src="pic" class="pic" v-if="pic">
-		</cell-group>
+		</CellGroup>
 	</container>
 </template>
 <script>

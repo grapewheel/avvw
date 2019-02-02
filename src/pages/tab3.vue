@@ -1,6 +1,6 @@
 <template>
 	<container>
-		<button-c size="large" @click="load">异步读取</button-c>
+		<Button size="large" @click="load">异步读取</Button>
 		<div>{{suggests}}</div>
 	</container>
 </template>
@@ -11,7 +11,7 @@
 
 	window.tab3Vue = {
 		name: "tab3",
-		components: { ButtonC: Button, Toast },
+		components: { Button, Toast },
 		data() {
 			return {
 				suggests: ""
