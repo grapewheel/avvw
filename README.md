@@ -1,7 +1,9 @@
 # AVVW APICLOUD 开发框架
-Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数据绑定特性和Apicloud手机操控能力相结合的APP开发框架，此框架**并非**采用Vue的SPA单页面应用方式，而是遵从Apicloud的多页面原生渲染效率方式，Vue+Webpack只是为了提供更佳的ES2015语法、模块分割和数据绑定代码体验，弥补Apicloud本身无法应用在庞大工程协作的缺点。
+Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数据绑定特性和Apicloud手机操控能力相结合的APP开发框架，此框架**并非**采用Vue的SPA单页面应用方式，而是遵从Apicloud的多页面原生渲染效率方式，Vue+Webpack只是为了提供更佳的ES2015+语法、模块分割和数据绑定代码体验，弥补Apicloud本身无法应用在庞大工程协作的缺点。
 
-> 使用AVVW可以极速开发出流畅的商用级别APP，让你轻松应付各种开发需求
+> 使用AVVW可以极速开发出流畅的商用级别APP，让你轻松应付各种开发需求   
+
+> 已适配Android 6以下低端机型，在此非常感谢[@ftlh2005](https://github.com/ftlh2005)同学的[Issue](https://github.com/grapewheel/avvw/issues/2#issue-404622819)
 
 # 目录结构
 - dist 编译代码，连同config.xml上传到Apicloud发布App
@@ -62,6 +64,9 @@ npm run dev 开启测试服，但和一般的vue测试不同的是，你需要�
 
 ### Apicloud API SDK
 你可以在vue中直接使用 api.xxx，也可以使用 this.$ac.xxx 来调用api sdk
+
+### ES6支持
+> vue支持大部分ES6语法，但要注意的是如果你修改templates下的page.ejs和index.html，请不要使用ES6语法，因为webpack默认没有转义模板文件
 
 ### 按需加载和异步加载
 > 手机CPU和内存有限，而且Apicloud采用Hybird技术，在性能上尤其低端安卓上肯定大打折扣，所以使用按需加载、异步加载和懒加载会更好地让App保持流畅原生感
