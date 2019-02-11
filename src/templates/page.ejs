@@ -25,7 +25,7 @@
       page = new Vue({
         el: '#page',
         components: {'vue': <%= htmlWebpackPlugin.options.name %>Vue},
-        mounted() {
+        mounted: function () {
           Origami.fastclick(document.body) // You must use fastclick on the mobile
         }
       })
@@ -37,7 +37,7 @@
         page = new Vue({
           el: '#page',
           components: {'vue': <%= htmlWebpackPlugin.options.name %>Vue},
-          mounted() {
+          mounted: function () {
             Origami.fastclick(document.body) // You must use fastclick on the mobile
           }
         })
