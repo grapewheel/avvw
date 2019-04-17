@@ -6,7 +6,10 @@
   "scripts": {
     "wifi-start": "apicloud wifiStart --port 23456",
     "wifi-stop": "apicloud wifiStop --port 23456",
-    "wifi-sync": "webpack --config webpack.prod.js && apicloud wifiSync --project ./ --updateAll false --port 23456 && apicloud wifiLog --port 23456",
+    "wifi-dev": "webpack --config webpack.dev.js && apicloud wifiSync --project ./ --updateAll false --port 23456",
+    "wifi-build": "webpack --config webpack.prod.js && apicloud wifiSync --project ./ --updateAll false --port 23456",
+    "wifi-log": "apicloud wifiLog --port 23456",
+    "support": "browserslist",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
@@ -23,23 +26,24 @@
     "apicloud-cli": "^0.2.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-import": "^1.11.0",
-    "clean-webpack-plugin": "^1.0.1",
-    "copy-webpack-plugin": "^4.6.0",
+    "browserslist": "^4.5.2",
+    "clean-webpack-plugin": "^2.0.1",
+    "copy-webpack-plugin": "^5.0.2",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.5.1",
-    "vue-template-compiler": "^2.5.22",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
-    "@babel/runtime": "^7.3.1",
-    "vant": "^1.5.4",
-    "vue": "^2.5.22"
+    "@babel/polyfill": "^7.4.0",
+    "@babel/runtime": "^7.4.2",
+    "vant": "^1.6.11",
+    "vue": "^2.6.10"
   }
 }

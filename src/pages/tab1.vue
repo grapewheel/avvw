@@ -1,10 +1,10 @@
 <template>
-	<container>
+	<div>
 		<Search placeholder="Search here"/>
 		<List v-model="loading" :finished="finished" finished-text="no more..." @load="loadMore">
 			<Cell v-for="item in list" :key="item" :title="item"/>
 		</List>
-	</container>
+	</div>
 </template>
 
 <script>

@@ -1,12 +1,12 @@
 <template>
-	<container>
+	<div>
 		<Header :left="false"/>
 		<Tabbar v-model="tabActive" id="tabbar" @change="changeTab" fixed>
 			<TabbarItem icon="home-o">标签</TabbarItem>
 			<TabbarItem icon="search" dot>标签</TabbarItem>
 			<TabbarItem icon="friends-o" info="5">标签</TabbarItem>
 		</Tabbar>
-	</container>
+	</div>
 </template>
 
 <script>
@@ -34,7 +34,6 @@
 				apicloud.dom("#tabbar").offsetHeight -
 				apicloud.dom("#nav").offsetHeight;
 
-			let that = this;
 			this.$ac.openFrameGroup(
 				{
 					name: "homeTabs",
@@ -64,16 +63,15 @@
 						}
 					]
 				},
-				function(ret, err) {
-					// here 'this' is not vue virtual dom 'this', IS apicloud API dom 'this', so 'that' the vue 'this'
-					that.tabActive = ret.index;
+				(ret, err) => { // You must use arrow function that can been used 'THIS'
+					this.tabActive = ret.index;
 				}
 			);
 		},
 		methods: {
 			changeTab(index) {
 				// You cann't test this on the browser, use wifi sync to ur phone pleaz
-				console.info("select tab: ", index);
+				console.info(`select tab: , ${index}`); // Must be use `` to log, DO NOT use console.info('', ''), it will ignore the second param
 				this.$ac.setFrameGroupIndex({
 					name: "homeTabs",
 					index,

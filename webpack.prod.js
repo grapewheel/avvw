@@ -24,11 +24,13 @@ module.exports = merge(base, {
     entry,
     optimization: {
         splitChunks: {
-            chunks: 'all'
-        }
+            chunks: 'async'
+        },
+        runtimeChunk: true,
+        namedChunks: true
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             './src/templates/vue.min.js',
         ]),

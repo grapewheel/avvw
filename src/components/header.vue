@@ -9,7 +9,7 @@
 	import apicloud from "@/libs/apicloud";
 
 	export default {
-		name: "header",
+		name: "navbar",
 		components: { NavBar },
 		props: ["left", "right"],
 		mounted() { // Should be at this time
@@ -27,4 +27,7 @@
 </script>
 
 <style scoped>
+	.van-nav-bar {
+		height: auto !important;
+	}
 </style>

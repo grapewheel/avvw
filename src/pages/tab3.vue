@@ -1,8 +1,8 @@
 <template>
-	<container>
+	<div>
 		<Button size="large" @click="load">异步读取</Button>
 		<div>{{suggests}}</div>
-	</container>
+	</div>
 </template>
 <script>
 	import { TAOBAO } from "@/libs/api";

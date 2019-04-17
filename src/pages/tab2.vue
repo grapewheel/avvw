@@ -1,12 +1,12 @@
 <template>
-	<container>
+	<div>
 		<CellGroup>
 			<Cell title="照片读取">
 				<Icon name="photograph" slot="right-icon" @click="takePic" style="margin-top: 3px;"/>
 			</Cell>
 			<img :src="pic" class="pic" v-if="pic">
 		</CellGroup>
-	</container>
+	</div>
 </template>
 <script>
 	import { Icon, CellGroup, Cell } from "vant";
@@ -21,7 +21,6 @@
 		},
 		methods: {
 			takePic() {
-				let that = this;
 				this.$ac.getPicture(
 					{
 						sourceType: "library",
@@ -33,9 +32,9 @@
 						targetWidth: 800,
 						saveToPhotoAlbum: false
 					},
-					function(ret, err) {
+					(ret, err) => {
 						if (ret) {
-							that.pic = ret.base64Data; // Your can change the base64 data to a file
+							this.pic = ret.base64Data; // Your can change the base64 data to a file
 						} else {
 							this.$ac.alert({ msg: err.msg });
 						}
