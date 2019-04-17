@@ -27,15 +27,15 @@ Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数
  ```bash
  npm i
  
- npm run wifi-start 开wifi服务，wifi-stop 停止服务   
- npm run wifi-dev 真机wifi无压缩同步，速度快
- npm run wifi-build 真机wifi压缩同步，速度慢
- npm run wifi-log 真机wifi日志输出
+ npm run wifi-start # 开wifi服务，wifi-stop 停止服务   
+ npm run wifi-dev # 真机wifi无压缩同步，速度快
+ npm run wifi-build # 真机wifi压缩同步，速度慢
+ npm run wifi-log # 真机wifi日志输出
  
- npm run support 测试兼容机型
- npm run dev 开启本地测试   
+ npm run support # 测试兼容机型
+ npm run dev # 开启本地测试   
  
- npm run build 编译
+ npm run build # 编译
  ```
 
  # 开发细节
