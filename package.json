@@ -1,6 +1,6 @@
 {
   "name": "avvw",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Avvw apicloud framework",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "author": "Marlon <124711483@qq.com>",
   "license": "MIT",
-  "keywords": ["apicloud", "vue", "vue2", "vant", "webpack","app", "hybird", "ios", "android", "javascript", "nodejs"],
+  "keywords": ["avvw", "apicloud", "vue", "vue2", "vant", "webpack","app", "hybird", "ios", "android", "javascript", "nodejs"],
   "repository": {
     "type": "github",
     "url": "https://github.com/grapewheel/avvw"
