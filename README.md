@@ -38,7 +38,7 @@ Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数
  npm run build # 编译
  ```
 
- # 开发细节
+# 开发细节
 如无需高级配置，那么只需关注src下pages目录文件，而无需更改templates目录文件，这里说明一下pages文件：   
 ### home.vue
 任何vue语法都可以使用，但有一处要留意！   
