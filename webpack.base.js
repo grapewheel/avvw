@@ -4,7 +4,8 @@ const resolve = require('path').resolve
 
 module.exports = {
   output: {
-    path: resolve(__dirname, 'dist')
+    path: resolve(__dirname, 'dist'),
+    filename: './js/[name].js'
   },
   module: {
     rules: [
@@ -41,7 +42,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([
       // './src/templates/api.js',
-      './src/templates/fastclick.min.js',
+      { from: './src/templates/fastclick.min.js', to: './js' },
       './src/templates/index.html'
     ])
   ],

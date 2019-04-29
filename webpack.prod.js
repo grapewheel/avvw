@@ -15,6 +15,7 @@ for (let file of files) {
         name: page,
         vuejs: 'vue.min.js',
         filename: `${page}.html`,
+        chunks: [page, 'runtime'],
         template: './src/templates/page.ejs'
     }))
 }
@@ -23,16 +24,14 @@ module.exports = merge(base, {
     mode: 'production',
     entry,
     optimization: {
-        splitChunks: {
-            chunks: 'async'
-        },
-        runtimeChunk: true,
-        namedChunks: true
+        runtimeChunk: {
+            name: 'runtime'
+        }
     },
     plugins: [
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
-            './src/templates/vue.min.js',
+            { from: './src/templates/vue.min.js', to: './js' }
         ]),
         ...htmlWebpacks
     ]
