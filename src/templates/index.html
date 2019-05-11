@@ -12,10 +12,15 @@
 </body>
 </html>
 <script type="text/javascript">
+  var url = './home.html'   // You can change the main entry in 'production' ENV
+  if ('<%= htmlWebpackPlugin.options.env %>' === 'development') {
+    url = 'http://192.168.0.104:8080/home.html' // You can change the main entry in 'development' ENV
+  }
+
   apiready = function () {
     api.openFrame({
       name: 'home',
-      url: './home.html', // You can change the main html where in the dist DIR
+      url: url,
       rect: {
         x: 0,
         y: 0,

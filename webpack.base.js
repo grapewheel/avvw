@@ -31,6 +31,9 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        options: {
+          cacheDirectory: true
+        },
         exclude: file => (
           /node_modules/.test(file) &&
           !/\.vue\.js/.test(file)
@@ -42,9 +45,8 @@ module.exports = {
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([
       // './src/templates/api.js',
-      { from: './src/templates/fastclick.min.js', to: './js' },
-      './src/templates/index.html'
-    ])
+      { from: './src/templates/fastclick.min.js', to: './js' }
+  ]),
   ],
   resolve: {
     alias: {

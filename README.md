@@ -5,7 +5,9 @@ Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数
 
 > 已适配IOS8、Android 6以下低端机型，在此非常感谢[@ftlh2005](https://github.com/ftlh2005)同学的[Issue](https://github.com/grapewheel/avvw/issues/2#issue-404622819)
 
-> v1.1.0最新版本已全面提升页面加载速度，在此非常感谢[@Viarotel](https://github.com/Viarotel)同学的[Issue](https://github.com/grapewheel/avvw/issues/8)
+> v1.1.0已全面提升页面加载速度，在此非常感谢[@Viarotel](https://github.com/Viarotel)同学的[Issue](https://github.com/grapewheel/avvw/issues/8)
+>
+> v1.2.0已实现手机调试热加载，在此非常感谢[@amnextking](https://github.com/amnextking)同学的[Issue](https://github.com/grapewheel/avvw/issues/10)
 
 # 目录结构
 - dist 编译代码，连同config.xml上传到Apicloud发布App
@@ -25,23 +27,68 @@ Apicloud + Vue2 + Vant（有赞前端）+ Webpack4打包，是一个采用Vue数
 - 其他省略
 
 # 开始使用
- git clone 或者 直接下载master包，cd进入包目录   
+ git clone 或者 直接下载master包，cd进入包目录
+
+### 手机实时调试
+
  ```bash
  npm i
  
- npm run wifi-start # 开wifi服务，wifi-stop 停止服务   
- npm run wifi-dev # 真机wifi无压缩同步，速度快
- npm run wifi-build # 真机wifi压缩同步，速度慢
- npm run wifi-log # 真机wifi日志输出
- 
- npm run support # 测试兼容机型
- npm run dev # 开启本地测试   
- 
- npm run build # 编译
+ npm run wifi-start # 开wifi服务，Apploader连接wifi服务，wifi-stop 停止服务   
+ npm run dev # 开启本地测试服
  ```
 
+待本地测试服完全开启后，查看测试服端口，如下：
+
+```bash
+ ℹ ｢wds｣: Project is running at http://0.0.0.0:8080/
+```
+
+然后打开./src/templates/index.html，修改development环境下调试手机能访问你本地测试服的局域网IP和测试服端口，如下：
+
+```html
+<script type="text/javascript">
+  var url = './home.html'   // You can change the main entry in 'production' ENV
+  if ('<%= htmlWebpackPlugin.options.env %>' === 'development') {
+    url = 'http://192.168.0.104:8080/home.html' // You can change the main entry in 'development' ENV
+  }
+  ...
+</script>
+```
+
+接着可以开始同步文件到手机Apploader进行调试
+
+```bash
+ npm run wifi-dev # 真机wifi无压缩同步，速度快
+ npm run wifi-log # 真机wifi日志输出
+```
+
+> 注意：wifi-dev 和 wifi-log 都只需要运行一次，Apploader第一次同步完成后，修改./src文件保存后手机自动同步和浏览器热加载一样！无需再手动wifi同步一次，这是1.2.0后版本的新特性！
+
+### 本地浏览器调试
+
+```bash
+npm run dev # 开启本地测试服
+```
+
+打开浏览器输入例如 http://0.0.0.0:8080/tab1.html 即可对某个页面进行调试，注意由于在本地浏览器环境下所以无法调试Apicloud sdk的相关功能
+
+### 编译上传
+
+```bash
+ npm run support # 测试兼容机型（可选）
+ npm run build # 编译
+```
+
+编译后，新建./widget文件夹，然后将./dist文件夹和config.xml拷贝到./widget下，压缩./widget文件夹生成widget.zip上传apicloud后台的“代码”处即可进行发布
+
+# 如何升级
+
+从v1.2.0之前的版本升级到v.1.2.0，只需获取框架最新源代码后，除./src/templates/index.html保留外，将你项目的./src下的文件全部覆盖到v1.2.0框架下的./src下的文件，然后对比你项目的package.json和v1.2.0的package.json差别修改后，重新运行npm i安装新开发依赖即可！
+
 # 开发细节
-如无需高级配置，那么只需关注src下pages目录文件，而无需更改templates目录文件，这里说明一下pages文件：   
+
+如无需高级配置，那么只需关注src下pages目录文件，这里说明一下pages文件：   
 ### home.vue
 任何vue语法都可以使用，但有一处要留意！   
 ```js
@@ -58,17 +105,17 @@ export default window.homeVue
 > 由于框架并非采用Vue的SPA，所以无法在多页面间使用vue-router、vuex之类的单页面应用的数据共享技术，而只能采用Apicloud API提供的相关页面跳转传递、数据共享技术
 
 ### 首页入口
-框架默认home.html为App首页入口，你也可以修改其他页面为入口，只需修改templates下的index.html即可   
+框架默认home.html为App首页入口，你也可以修改其他页面为入口，只需修改./src/templates下的index.html即可   
 ```js
-api.openFrame({
-    name: 'home',
-    url: './home.html', // 修改此处对应pages的文件名即可 eg. ./main.html
-})
+var url = './home.html'   // 生产环境下，修改此处对应pages的文件名即可 eg. ./main.html
+if ('<%= htmlWebpackPlugin.options.env %>' === 'development') {
+    url = 'http://192.168.0.104:8080/home.html' // 开发环境下，修改此处对应pages的文件名即可 eg. ./main.html
+}
 ```
 
 ### 本地浏览器预览
-npm run dev 开启测试服，但和一般的vue测试不同的是，你需要手动切换需要测试的页面，eg. [http://localhost:8080/home.html](http://localhost:8080/home.html)，不用测试index.html，因为此文件是Apicloud所用，页面测试时遇到**api is not defined**不用理会，因为api是Apicloud App环境下才初始化的对象
-> 浏览器预览是用来调节界面排版布局，体验性测试请使用真机App loader   
+npm run dev 开启测试服，但和一般的vue测试不同的是，你需要手动切换需要测试的页面，eg. [http://localhost:8080/home.html](http://localhost:8080/home.html)，不能测试index.html，因为此文件是Apicloud所用，页面测试时遇到**api is not defined**不用理会，因为api是Apicloud App环境下才初始化的对象
+> 浏览器预览是用来调节界面排版布局，体验性测试请使用真机Apploader   
 
 ### Apicloud API SDK
 你可以在vue中直接使用 api.xxx，也可以使用 this.$ac.xxx 来调用api sdk

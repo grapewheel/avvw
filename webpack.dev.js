@@ -1,9 +1,10 @@
 const merge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const base = require('./webpack.base')
 const readdirSync = require('fs').readdirSync
+const path = require('path')
 
 // Collect the page's names
 const files = readdirSync('./src/pages')
@@ -20,12 +21,25 @@ for (let file of files) {
     }))
 }
 
+// Modify the index html for HMR!
+htmlWebpacks.push(new HtmlWebpackPlugin({
+    env: 'development',
+    filename: `index.html`,
+    chunks: [],
+    template: './src/templates/index.html'
+}))
+
 module.exports = merge(base, {
     entry,
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: false,
+        contentBase: path.resolve(__dirname, 'dist'),
+        host: '0.0.0.0',
+        disableHostCheck: true,
+        writeToDisk: file => {
+            return /index.html$/.test(file)
+        },
         hot: true
     },
     optimization: {
@@ -34,10 +48,10 @@ module.exports = merge(base, {
         }
     },
     plugins: [
+        new HotModuleReplacementPlugin(),
         new CopyWebpackPlugin([
             { from: './src/templates/vue.js', to: './js' }
         ]),
-        new HotModuleReplacementPlugin(),
         ...htmlWebpacks
     ]
 })

@@ -71,7 +71,7 @@
 		methods: {
 			changeTab(index) {
 				// You cann't test this on the browser, use wifi sync to ur phone pleaz
-				console.info(`select tab: , ${index}`); // Must be use `` to log, DO NOT use console.info('', ''), it will ignore the second param
+				console.info(`select tab: ${index}`); // Must be use `` to log, DO NOT use console.info('', ''), it will ignore the second param
 				this.$ac.setFrameGroupIndex({
 					name: "homeTabs",
 					index,

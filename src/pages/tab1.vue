@@ -8,7 +8,6 @@
 </template>
 
 <script>
-	// Wanna debug on this page? Just 'npm run dev' and open the browser to url 'http://localhost:8080/tab1.html'
 	import { Search, List, Cell } from "vant";
 
 	window.tab1Vue = {
