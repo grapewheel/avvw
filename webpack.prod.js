@@ -20,6 +20,14 @@ for (let file of files) {
     }))
 }
 
+// Modify the index html for production!
+htmlWebpacks.push(new HtmlWebpackPlugin({
+    env: 'production',
+    filename: `index.html`,
+    chunks: [],
+    template: './src/templates/index.html'
+}))
+
 module.exports = merge(base, {
     mode: 'production',
     entry,

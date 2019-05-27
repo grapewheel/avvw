@@ -36,6 +36,7 @@ module.exports = merge(base, {
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         host: '0.0.0.0',
+        useLocalIp: true,
         disableHostCheck: true,
         writeToDisk: file => {
             return /index.html$/.test(file)
