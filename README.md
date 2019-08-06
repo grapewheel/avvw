@@ -150,4 +150,5 @@ npm run dev 开启测试服，但和一般的 vue 测试不同的是，你需要
 
 ---
 
-_Copyright by [Grape Studio](https://github.com/grapewheel?tab=repositories)_
+_Copyright by [Grape Studio](https://github.com/grapewheel?tab=repositories)_  
+_QQ 群 492968709_
