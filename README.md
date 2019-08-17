@@ -144,7 +144,7 @@ npm run dev 开启测试服，但和一般的 vue 测试不同的是，你需要
 
 # 扩展使用
 
-框架集成了[有赞 vant](https://youzan.github.io/vant/#/zh-CN/intro)前端框架，适用大部分需求，当然你也可以更换其他 Vue 前端框架。
+框架集成了[有赞 vant](https://youzan.github.io/vant/1.x/#/zh-CN/intro)前端框架，适用大部分需求，当然你也可以更换其他 Vue 前端框架。
 
 > 欢迎扩展和完善此框架，接下去我会放出更多其他更好用的开发框架
 
