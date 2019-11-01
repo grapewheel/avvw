@@ -1,1 +1,0 @@
-{**/*.js.map,**/node_modules/**,src/**,package.json,package-lock.json,.gitignore,.idea/**,.vscode/**,webpack*,README.md,babel.config.js}

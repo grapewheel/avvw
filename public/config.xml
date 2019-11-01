@@ -2,12 +2,12 @@
 <widget id="A0000000000023" version="0.0.1">
   	<name>avvw</name>
 	<description>
-		Example For APICloud + Vue + Vant + Webpack4.
+		Example For APICloud + Vue + Vant + Webpack(Vue-cli3).
 	</description>
 	<author email="124711483@qq.com" href="https://github.com/grapestudio">
 		Marlon
 	</author>
-	<content src="./dist/index.html" />
+	<content src="./index.html" />
 	<preference name="appBackground" value="rgba(0,0,0,0)"/>
 	<preference name="windowBackground" value="rgba(0,0,0,0)"/>
 	<preference name="frameBackgroundColor" value="rgba(255,255,255,255)"/>

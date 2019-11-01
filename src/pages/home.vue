@@ -16,7 +16,7 @@
 	/* You can use other UI framework as u like */
 	import { Tabbar, TabbarItem } from "vant"; // Dynamic import is a good idea to keep ur page slim and fast
 
-	window.homeVue = {
+	export default {
 		// Pay attention here!!
 		name: "home",
 		components: { Header, Tabbar, TabbarItem },
@@ -50,16 +50,16 @@
 					frames: [
 						{
 							name: "tab1",
-							url: "tab1.html"
+							url: "./tabs-tab1.html" // sub diretory file format: ./[subdir]-[subdir]-[filename].html
 						},
 						{
 							name: "tab2",
-							url: "tab2.html",
+							url: "./tabs-tab2.html",
 							bounces: true
 						},
 						{
 							name: "tab3",
-							url: "tab3.html"
+							url: "./tabs-tab3.html"
 						}
 					]
 				},
@@ -80,8 +80,6 @@
 			}
 		}
 	};
-
-	export default window.homeVue;
 </script>
 
 <style scoped>
