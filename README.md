@@ -1,5 +1,7 @@
 # AVVW APICLOUD 开发框架
 
+# 欢迎尝新：集成 Vue-cli3 和 Vant2 的 [v1.3.0 测试版](https://github.com/grapewheel/avvw/tree/vue3-cli)
+
 Apicloud + Vue2 + Vant（有赞前端）+ Webpack4 打包，是一个采用 Vue 数据绑定特性和 Apicloud 手机操控能力相结合的 APP 开发框架，此框架**并非**采用 Vue 的 SPA 单页面应用方式，而是遵从 Apicloud 的多页面原生渲染效率方式，Vue+Webpack 只是为了提供更佳的 ES2015+语法、模块分割和数据绑定代码体验，弥补 Apicloud 本身无法应用在庞大工程协作的缺点。
 
 > 使用 AVVW 可以极速开发出流畅的商用级别 APP，让你轻松应付各种开发需求
