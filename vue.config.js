@@ -4,13 +4,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // Collect the page's names
 const pages = {}
-const vues = klawSync('./src/pages', { nodir: true, filter: item => path.basename(item.path) !== 'vue' })
+const vues = klawSync('./src/pages', { nodir: true })
+
+const pagesIndex = path.resolve(__dirname, 'src/pages').length
 
 vues.map(vue => {
-    const pagesIndex = vue.path.lastIndexOf('/src/pages/') + 11
-    const filename = vue.path.substring(pagesIndex).replace(/vue$/, 'html').replace(/\//, '-')
+    let filename
+    if (process.platform !== 'win32') {
+        filename = vue.path.substring(pagesIndex + 1).replace(/\.vue$/, '.html').replace(/\//g, '-')
+    } else {
+        filename = vue.path.substring(pagesIndex + 2).replace(/\.vue$/, '.html').replace(/\\\\/g, '-')
+    }
     const page = filename.substring(0, filename.lastIndexOf("."))
 
+    console.log(filename)
+    console.log(page)
     pages[page] = {
         entry: vue.path,
         template: './public/page.ejs',
