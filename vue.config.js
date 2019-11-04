@@ -13,7 +13,7 @@ vues.map(vue => {
     if (process.platform !== 'win32') {
         filename = vue.path.substring(pagesIndex + 1).replace(/\.vue$/, '.html').replace(/\//g, '-')
     } else {
-        filename = vue.path.substring(pagesIndex + 2).replace(/\.vue$/, '.html').replace(/\\\\/g, '-')
+        filename = vue.path.substring(pagesIndex + 1).replace(/\.vue$/, '.html').replace(/\\/g, '-')
     }
     const page = filename.substring(0, filename.lastIndexOf("."))
 
