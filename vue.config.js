@@ -17,8 +17,8 @@ vues.map(vue => {
     }
     const page = filename.substring(0, filename.lastIndexOf("."))
 
-    console.log(filename)
-    console.log(page)
+    // console.log(filename)
+    // console.log(page)
     pages[page] = {
         entry: vue.path,
         template: './public/page.ejs',
