@@ -17,7 +17,7 @@ Apicloud + Vue2 + Vant2（有赞前端）+ Webpack4 (Vue-cli3) 打包，是一�
   - js/fastclick.min.js 移动端减少触点反馈时间
   - js/vue.js 未压缩 vue 库，用于开发环境
   - js/vue.min.js 压缩 vue 库，用于生产环境
-  - index.html Apicloud 入口文件
+  - index.html Apicloud 启动文件
   - page.ejs 将 pages 下 vue 编译为 Apicloud 可用的模板
   - config.xml Apicloud 配置文件
 - .env 开发和生成环境对应的入口地址

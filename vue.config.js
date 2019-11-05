@@ -44,7 +44,7 @@ module.exports = {
     lintOnSave: false,
     devServer: {
         writeToDisk: file => {
-            return /index.html$/.test(file)
+            return /index.html$/.test(file) || /config.xml$/.test(file)
         }
     },
     configureWebpack: {
