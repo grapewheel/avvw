@@ -70,7 +70,10 @@ module.exports = {
                     useShortDoctype: true
                 }
             })
-        ]
+        ],
+        externals: {
+            vue: 'Vue'
+        }
     },
     chainWebpack(config) {
         config.optimization.splitChunks(undefined)

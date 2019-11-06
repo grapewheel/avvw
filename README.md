@@ -88,6 +88,10 @@ npm run dev # 开启本地测试服
 
 如无需高级配置，那么只需关注 src 目录下文件，这里说明一下 pages 文件：
 
+### config.xml
+
+使用自定义 loader 时，./public/config.xml 的 `<widget id="A0000000000023" version="0.0.1">` 的 widget id 必须修改为您的 App id
+
 ### xxx.vue
 
 任何 vue 语法都可以使用，而且直接`export default`vue 即可，**无需再像 v1.3.0 之前版本那样 window.xxxVue 这样处理**
