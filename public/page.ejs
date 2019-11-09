@@ -32,7 +32,7 @@
     Vue.prototype.$ac = api; // Vue global apicloud API
     page = new Vue({
       el: '#page',
-      components: { page: window.pageVue.default },
+      components: { page: window.pageVue },
       mounted: function() {
         Origami.fastclick(document.body); // You must use fastclick on the mobile
       }
@@ -44,7 +44,7 @@
     if (page === undefined) {
       page = new Vue({
         el: '#page',
-        components: { page: window.pageVue.default },
+        components: { page: window.pageVue },
         mounted: function() {
           Origami.fastclick(document.body); // You must use fastclick on the mobile
         }

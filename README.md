@@ -64,6 +64,10 @@ VUE_APP_ENTRY_PRD=./home.html
 
 > **特别注意：很多小伙伴发现开发时页面第一次加载比较慢，其实是因为手机从本地局域网电脑无线获取页面数据而导致的，但编译为发布包时，页面文件会一并打入 APP，所以开发时的页面加载速度可忽略！**
 
+### config.xml
+
+使用自定义 Apicloud loader 时，./public/config.xml 的 `<widget id="A0000000000023" version="0.0.1">` 的 widget id 必须修改为您的 App id 才能 Wifi 同步成功
+
 ### 本地浏览器调试
 
 ```bash
@@ -87,10 +91,6 @@ npm run dev # 开启本地测试服
 # 开发细节
 
 如无需高级配置，那么只需关注 src 目录下文件，这里说明一下 pages 文件：
-
-### config.xml
-
-使用自定义 loader 时，./public/config.xml 的 `<widget id="A0000000000023" version="0.0.1">` 的 widget id 必须修改为您的 App id
 
 ### xxx.vue
 

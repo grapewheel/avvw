@@ -4,7 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // Collect the page's names
 const pages = {}
-const vues = klawSync('./src/pages', { nodir: true })
+const vues = klawSync('./src/pages', {
+    nodir: true, traverseAll: true, filter(file) {
+        return path.extname(file.path) === '.vue'
+    }
+})
 
 const pagesIndex = path.resolve(__dirname, 'src/pages').length
 
@@ -50,7 +54,8 @@ module.exports = {
     configureWebpack: {
         output: {
             library: "pageVue",
-            libraryTarget: "window"
+            libraryTarget: "window",
+            libraryExport: 'default'
         },
         optimization: {
             runtimeChunk: {
