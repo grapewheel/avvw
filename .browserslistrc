@@ -1,5 +1,5 @@
 last 1 version
 not dead
-android > 4
-ios > 8
+android >= 4
+ios >= 8
 > 2%
