@@ -66,7 +66,7 @@ VUE_APP_ENTRY_PRD=./home.html
 
 ### config.xml
 
-使用自定义 Apicloud loader 时，./public/config.xml 的 `<widget id="A0000000000023" version="0.0.1">` 的 widget id 必须修改为您的 App id 才能 Wifi 同步成功
+使用自定义 Apploader 时，./public/config.xml 的 `<widget id="A0000000000023" version="0.0.1">` 的 widget id 必须修改为您的 App id 才能 Wifi 同步成功
 
 ### 本地浏览器调试
 
