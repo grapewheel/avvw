@@ -43,7 +43,7 @@ vues.map(vue => {
 module.exports = {
     pages,
     publicPath: '',
-    filenameHashing: false,
+    filenameHashing: true,
     productionSourceMap: false,
     lintOnSave: false,
     devServer: {
