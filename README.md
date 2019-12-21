@@ -35,25 +35,28 @@ npm i # 初始化安装npm模块
 
 ```bash
 npm run wifi-start # 开wifi服务，Apploader连接wifi服务，wifi-stop 停止服务
-npm run dev # 开启本地测试服
 ```
 
-待本地测试服完全开启后，查看测试服端口，如下 Network 地址：
+待 wifi 服务开启后，查看本地 ip 地址，如下地址：
 
 ```bash
- App running at:
-  - Local:   http://localhost:8080
-  - Network: http://192.168.0.104:8080
+APICloud Is Listening on ip: ["192.168.0.104","192.168.146.1","192.168.69.1"]
 ```
 
-然后打开./.env，修改 VUE_APP_ENTRY_DEV 测试环境下调试手机能访问你本地测试服的局域网 IP 和测试服端口，如下：
+然后打开./.env，修改 VUE_APP_ENTRY_DEV 测试环境下调试手机能访问你本地测试服的局域网 IP:8080，如下：
 
 ```text
 VUE_APP_ENTRY_DEV=http://192.168.0.104:8080/home.html
 VUE_APP_ENTRY_PRD=./home.html
 ```
 
-接着可以开始同步文件到手机 Apploader 进行调试
+然后再打开本地测试服
+
+```bash
+npm run dev # 开启本地测试服
+```
+
+待本地测试服开启后，可以开始同步文件到手机 Apploader 进行调试
 
 ```bash
  npm run wifi-sync # 真机wifi同步
@@ -104,20 +107,20 @@ Apicloud 引用打开多级目录页面时，以./src/pages 作为根目录如�
 
 ```js
 this.$ac.openFrameGroup({
-  name: 'homeTabs',
+  name: "homeTabs",
   frames: [
     {
-      name: 'tab1',
-      url: './tabs-tab1.html' // 引用多级目录文件格式: ./[subdir]-[...]-[filename].html
+      name: "tab1",
+      url: "./tabs-tab1.html" // 引用多级目录文件格式: ./[subdir]-[...]-[filename].html
     },
     {
-      name: 'tab2',
-      url: './tabs-tab2.html',
+      name: "tab2",
+      url: "./tabs-tab2.html",
       bounces: true
     },
     {
-      name: 'tab3',
-      url: './tabs-tab3.html'
+      name: "tab3",
+      url: "./tabs-tab3.html"
     }
   ]
 });
