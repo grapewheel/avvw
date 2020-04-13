@@ -56,6 +56,8 @@ VUE_APP_ENTRY_PRD=./home.html
 npm run dev # 开启本地测试服
 ```
 
+> **特别注意：如果你在开发时增加了./src/pages/里的页面，那么需要先关闭 dev，重新运行才会编译新页面，因为多入口热加载并不会检测新页面**
+
 待本地测试服开启后，可以开始同步文件到手机 Apploader 进行调试
 
 ```bash
@@ -111,18 +113,18 @@ this.$ac.openFrameGroup({
   frames: [
     {
       name: "tab1",
-      url: "./tabs-tab1.html" // 引用多级目录文件格式: ./[subdir]-[...]-[filename].html
+      url: "./tabs-tab1.html", // 引用多级目录文件格式: ./[subdir]-[...]-[filename].html
     },
     {
       name: "tab2",
       url: "./tabs-tab2.html",
-      bounces: true
+      bounces: true,
     },
     {
       name: "tab3",
-      url: "./tabs-tab3.html"
-    }
-  ]
+      url: "./tabs-tab3.html",
+    },
+  ],
 });
 ```
 
@@ -152,6 +154,18 @@ npm run dev 开启测试服，但和一般的 vue 测试不同的是，你需要
 ### 按需加载和异步加载
 
 > 手机 CPU 和内存有限，而且 Apicloud 采用 Hybird 技术，在性能上尤其低端安卓上肯定大打折扣，所以使用按需加载、异步加载和懒加载会更好地让 App 保持流畅原生感
+
+### 开发编译内存溢出
+
+有小伙伴在开发时发现页面过多时，热加载编译会出现内存溢出问题，已修改 npm run dev 的脚本命令增加 node 的运行时内存上限，如仍出现内存溢出，请继续上调 max_old_space_size 的值
+
+package.json:
+
+```json
+"scripts" {
+  "dev": "cross-env NODE_OPTIONS=--max_old_space_size=8192 vue-cli-service serve"
+}
+```
 
 # 扩展使用
 
