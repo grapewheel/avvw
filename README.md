@@ -14,6 +14,12 @@ Apicloud + Vue2 + Vant2（有赞前端）+ Webpack4 (Vue-cli3) 打包，是一�
 
 ---
 
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/82/78/5e/82785e42-02e3-4d50-b6be-6052042d54d2/AppIcon-0-0-1x_U007emarketing-0-0-0-4-85-220.png/246x0w.png" width="60" /> [易挖网](https://apps.apple.com/cn/app/易挖网/id1476913825)
+
+<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/7b/8a/57/7b8a5700-cf77-6289-c9cc-938bfa2d68bb/pr_source.jpg/300x0w.jpg" width="30%" /><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/e7/e1/80/e7e18013-dc6f-9f25-1bc1-df8bcaafc3e8/pr_source.jpg/300x0w.jpg" width="30%" /><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/f5/19/27/f519270b-bc88-98d7-dc99-4ba681f81c8e/pr_source.jpg/300x0w.jpg" width="30%" />
+
+---
+
 <img src="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/ad/fb/0a/adfb0a51-c267-17b7-95e7-e5aab3ec1e48/AppIcon-0-0-1x_U007emarketing-0-0-0-4-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" width="60"> [武文浓墨](https://apps.apple.com/cn/app/id1504004849)
 
 <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/8f/1d/39/8f1d3948-7b96-b9c2-a5e6-6261fb0c35a4/pr_source.png/300x0w.png" width="30%"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/95/12/a0/9512a082-b97e-2765-57b1-a038261a296f/pr_source.png/300x0w.png" width="30%"><img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/5a/f7/1c/5af71cee-782c-4a30-edde-aa86215a0665/pr_source.png/300x0w.png" width="30%">
@@ -187,7 +193,7 @@ package.json:
 
 # 扩展使用
 
-框架集成了[有赞 vant2](https://youzan.github.io/vant/#/zh-CN/intro)前端框架，适用大部分需求，当然你也可以更换其他 Vue 前端框架。
+框架集成了[有赞 vant](https://youzan.github.io/vant/#/zh-CN/intro) 2.8.4 前端框架，适用大部分需求，当然你也可以更换其他 Vue 前端框架。
 
 > 欢迎扩展和完善此框架，接下去我会放出更多其他更好用的开发框架
 
