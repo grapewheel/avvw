@@ -205,7 +205,7 @@ package.json:
 
 # 扩展使用
 
-框架集成了[有赞 vant](https://youzan.github.io/vant/#/zh-CN/intro) 2.8.4 前端框架，适用大部分需求，当然你也可以更换其他 Vue 前端框架。
+框架集成了[有赞 vant](https://vant-contrib.gitee.io/vant) 2.8.4 前端框架，适用大部分需求，当然你也可以更换其他 Vue 前端框架。
 
 > 欢迎扩展和完善此框架，接下去我会放出更多其他更好用的开发框架
 

@@ -1,6 +1,6 @@
 {
   "name": "avvw",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "Apicloud + Vue2 + Vant（有赞前端）+ Webpack(Vue-cli3)打包，是一个采用Vue数据绑定特性和Apicloud手机操控能力相结合的APP开发框架",
   "scripts": {
     "wifi-start": "apicloud wifiStart --port 23456",
