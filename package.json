@@ -41,7 +41,7 @@
   "devDependencies": {
     "@vue/cli": "^4.0.5",
     "@vue/cli-plugin-babel": "^4.0.0",
-    "@vue/cli-service": "^4.0.0",
+    "@vue/cli-service": "^5.0.8",
     "apicloud-cli": "^0.2.0",
     "babel-plugin-import": "^1.12.2",
     "cross-env": "^7.0.2",
